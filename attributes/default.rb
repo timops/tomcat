@@ -45,8 +45,8 @@ default["tomcat"]["tomcat_auth"] = "true"
 
 case node['platform']
 when "centos","redhat","fedora"
-  default["tomcat"]["user"] = "tomcat"
-  default["tomcat"]["group"] = "tomcat"
+  default["tomcat"]["user"] = "tomcat6"
+  default["tomcat"]["group"] = "tomcat6"
   default["tomcat"]["home"] = "/usr/share/tomcat#{node["tomcat"]["base_version"]}"
   default["tomcat"]["base"] = "/usr/share/tomcat#{node["tomcat"]["base_version"]}"
   default["tomcat"]["config_dir"] = "/etc/tomcat#{node["tomcat"]["base_version"]}"
