@@ -20,6 +20,11 @@
 # required for the secure_password method from the openssl cookbook
 ::Chef::Recipe.send(:include, Opscode::OpenSSL::Password)
 
+case node['platform']
+when 'centos'
+  user 'tomcat6'
+end
+
 include_recipe "java"
 
 tomcat_pkgs = value_for_platform(
